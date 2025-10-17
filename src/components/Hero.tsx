@@ -6,11 +6,11 @@ const Hero = () => {
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden pt-20">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-left-center md:bg-right-center scale-x-[-1]"
+        className="absolute inset-0 bg-cover bg-right md:bg-right-center scale-x-[-1]"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/10" />
+        <div className="absolute inset-0 bg-black/40 md:bg-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/10 hidden md:block" />
       </div>
 
       {/* Content */}
