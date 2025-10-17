@@ -1,15 +1,15 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero.jpeg";
+import heroImage from "@/assets/hero.jpg";
 
 const Hero = () => {
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden pt-20">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-left-center md:bg-right-center"
+        className="absolute inset-0 bg-cover bg-left-center md:bg-right-center scale-x-[-1]"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/60" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/10" />
       </div>
 
