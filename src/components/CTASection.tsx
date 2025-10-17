@@ -10,7 +10,7 @@ const CTASection = () => {
         </h2>
         <p className="text-lg md:text-xl max-w-3xl mx-auto mb-6 leading-relaxed text-muted-foreground">
           To learn more about how we can support your clothing manufacturing, 
-          apparel development, and fashion design businesses, get in touch with us right away.
+          apparels development, and fashion design businesses, get in touch with us right away.
         </p>
         <p className="text-base mb-8 text-muted-foreground">
           Are you willing to move to the next stage?

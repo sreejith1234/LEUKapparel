@@ -90,7 +90,7 @@ const WhoWeAre = () => {
               <h2 className="text-3xl md:text-4xl font-bold">Vision Statement</h2>
               <div className="space-y-4 text-primary-foreground/90 leading-relaxed">
                 <p>
-                  To be a globally recognized apparel manufacturer known for innovation, craftsmanship, and ethical production — empowering brands with sustainable, high-quality garments made with precision and care.
+                  To be a globally recognized apparels manufacturer known for innovation, craftsmanship, and ethical production — empowering brands with sustainable, high-quality garments made with precision and care.
                 </p>
                 <p className="font-semibold italic">
                   Empowering global brands with quality, innovation, and ethical craftsmanship

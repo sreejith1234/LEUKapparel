@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Twitter, Github } from "lucide-react";
+import heroImage from "@/assets/logo.png";
 
 const Footer = () => {
   const pages = ["Home", "About", "FAQ", "Privacy Policy", "Terms", "Contact Us"];
@@ -16,8 +17,9 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-12">
         {/* Logo */}
         <div className="mb-8">
-          <div className="text-white text-2xl font-bold tracking-tight">
-            LEUK<span className="font-light">apparel</span>
+          <div className="flex items-center text-white text-2xl font-bold tracking-tight">
+            <img src={heroImage} alt="LEUKapparels Logo" className="h-8 w-8 mr-2" />
+            LEUK<span className="font-light pl-1">apparels</span>
           </div>
         </div>
 
@@ -32,7 +34,7 @@ const Footer = () => {
                 Tel: <a href="tel:+914412345678" className="hover:text-white transition-colors">+91 44 1234 5678</a>
               </p>
               <p>
-                Email: <a href="mailto:sales@leukapparel.com" className="text-blue-400 hover:text-white transition-colors">sales@leukapparel.com</a>
+                Email: <a href="mailto:sales@leukapparels.com" className="text-blue-400 hover:text-white transition-colors">sales@leukapparels.com</a>
               </p>
             </div>
             <div className="flex gap-4 mt-8">
@@ -108,7 +110,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-slate-800 pt-6 text-center">
           <div className="text-sm text-slate-400">
-            <span>© Copyright © 2025 Leuk Apparel. All Rights Reserved.</span>
+            <span>© Copyright © 2025 Leuk Apparels. All Rights Reserved.</span>
           </div>
         </div>
       </div>

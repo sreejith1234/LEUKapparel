@@ -18,19 +18,19 @@ const Services = () => {
   const services = [
     {
       title: "Private Label Clothing",
-      description: "Tack Apparel is a quality-driven private-label clothing manufacturer that serves the needs of well-known companies and a brand-new clothing line. In the high need for private labels, we are here by your side as the finest option to stand out in the congested apparel industry.",
+      description: "Tack Apparels is a quality-driven private-label clothing manufacturer that serves the needs of well-known companies and a brand-new clothing line. In the high need for private labels, we are here by your side as the finest option to stand out in the congested apparels industry.",
       image: privateLabelImg,
       link: "#",
     },
     {
       title: "Cut & Sew Manufacturer",
-      description: "You have access to the best cut-and-sew apparel manufacturer. You can specify how your intended article is to be created from scratch. Everything is under one roof, from fabric selection to the finishing touches on the finished project.",
+      description: "You have access to the best cut-and-sew apparels manufacturer. You can specify how your intended article is to be created from scratch. Everything is under one roof, from fabric selection to the finishing touches on the finished project.",
       image: cutSewImg,
       link: "#",
     },
     {
       title: "Custom Embroidery Services",
-      description: "With our cutting-edge custom embroidery procedures and techniques, elevate your brand. We provide you with a quick and dependable facility that offers high-quality goods, including embroidered digitalization services and custom apparel manufacturing.",
+      description: "With our cutting-edge custom embroidery procedures and techniques, elevate your brand. We provide you with a quick and dependable facility that offers high-quality goods, including embroidered digitalization services and custom apparels manufacturing.",
       image: embroideryImg,
       link: "#",
     },
@@ -42,13 +42,13 @@ const Services = () => {
     },
     {
       title: "Hoodie Manufacturers",
-      description: "Tack Apparel uses a variety of custom clothing, you can create your very own brand of a customized hoodie. Showcase incredibly high-quality custom-made hoodies that satisfy the needs and preferences of your target markets to make a powerful message for your company.",
+      description: "Tack Apparels uses a variety of custom clothing, you can create your very own brand of a customized hoodie. Showcase incredibly high-quality custom-made hoodies that satisfy the needs and preferences of your target markets to make a powerful message for your company.",
       image: hoodieImg,
       link: "#",
     },
     {
       title: "Sportswear Manufacturers",
-      description: "Build your custom fitness apparel manufacturer brand with Tack Apparel. Send us any reference drawings, pictures, and design files, and the rest is up to us. We will help you every step of the way, from sampling to manufacturing.",
+      description: "Build your custom fitness apparels manufacturer brand with Tack Apparels. Send us any reference drawings, pictures, and design files, and the rest is up to us. We will help you every step of the way, from sampling to manufacturing.",
       image: sportswearImg,
       link: "#",
     },
@@ -60,7 +60,7 @@ const Services = () => {
     },
     {
       title: "Leather Manufacturers",
-      description: "We produce leather goods that inspire consumers to feel strong and take action. Tack apparel is your go-to premium leather goods manufacturer whether you wish to expand with new products, add an accessory line to your existing product line, or enhance your manufacturing process.",
+      description: "We produce leather goods that inspire consumers to feel strong and take action. Tack apparels is your go-to premium leather goods manufacturer whether you wish to expand with new products, add an accessory line to your existing product line, or enhance your manufacturing process.",
       image: leatherImg,
       link: "#",
     },
@@ -100,7 +100,7 @@ const Services = () => {
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             You get everything you need to start your fashion line, corporate business, and accessory.
-            Let's be distinctive, with Tack apparel.
+            Let's be distinctive, with Tack apparels.
           </p>
         </div>
 

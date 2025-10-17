@@ -8,7 +8,7 @@ const FeatureSections = () => {
   const features = [
     {
       title: "A Leading Custom Clothing Manufacturer for Small Business",
-      description: "If you are searching for a tried-and-true systematic approach, Tack apparel is the best custom clothing manufacturer for small and large businesses. One-stop custom apparel manufacturer with extensive experience in the production of clothing, we uphold friendly associations with fashionistas.",
+      description: "If you are searching for a tried-and-true systematic approach, Tack apparels is the best custom clothing manufacturer for small and large businesses. One-stop custom apparels manufacturer with extensive experience in the production of clothing, we uphold friendly associations with fashionistas.",
       image: smallBusinessBg,
     },
     {

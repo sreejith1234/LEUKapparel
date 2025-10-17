@@ -1,8 +1,8 @@
-# Leuk Apparel
+# Leuk Apparels
 
 ## Project info
 
-High-quality clothing manufacturer providing the best quality, top-notch apparel.
+High-quality clothing manufacturer providing the best quality, top-notch apparels.
 
 ## How can I edit this code?
 

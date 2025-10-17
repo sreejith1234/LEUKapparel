@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import heroImage from "@/assets/logo.png";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,8 +22,9 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="text-2xl font-bold tracking-tight">
-              LEUK<span className="font-light">apparel</span>
+            <Link to="/" className="flex items-center text-2xl font-bold tracking-tight">
+              <img src={heroImage} alt="LEUKapparel Logo" className="h-8 w-8 mr-2" />
+              LEUK <span className="font-normal pl-1">apparels</span>
             </Link>
           </div>
 
@@ -33,7 +35,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`relative text-sm font-light transition-colors duration-300 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 ${
+                  className={`relative text-sm font-normal transition-colors duration-300 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 ${
                     location.pathname === item.href
                       ? 'text-accent after:w-full'
                       : 'hover:text-accent after:w-0 hover:after:w-full'
@@ -45,7 +47,7 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="relative text-sm font-light hover:text-accent transition-colors duration-300 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                  className="relative text-sm font-normal hover:text-accent transition-colors duration-300 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {item.name}
                 </a>
@@ -81,7 +83,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="text-sm font-light hover:text-accent transition-colors duration-300 py-2"
+                  className="text-sm font-normal hover:text-accent transition-colors duration-300 py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
@@ -90,7 +92,7 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-sm font-light hover:text-accent transition-colors duration-300 py-2"
+                  className="text-sm font-normal hover:text-accent transition-colors duration-300 py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
