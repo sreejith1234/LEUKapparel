@@ -15,12 +15,7 @@ const CTASection = () => {
         <p className="text-base mb-8 text-muted-foreground">
           Are you willing to move to the next stage?
         </p>
-        <Button 
-          size="lg"
-          className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 text-base px-8 py-6"
-        >
-          Schedule a Consultation
-        </Button>
+
       </div>
     </section>
   );

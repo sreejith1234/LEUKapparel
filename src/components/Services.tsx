@@ -7,9 +7,6 @@ import tshirtImg from "@/assets/tshirt.jpg";
 import hoodieImg from "@/assets/hoodie.jpg";
 import sportswearImg from "@/assets/sportswear.jpg";
 import sweatshirtImg from "@/assets/sweatshirt.jpg";
-import leatherImg from "@/assets/leather.jpg";
-import swimwearImg from "@/assets/swimwear.jpg";
-import jeansImg from "@/assets/jeans.jpg";
 import babyClothingImg from "@/assets/baby-clothing.jpg";
 import uniformImg from "@/assets/uniform.jpg";
 import { ArrowRight } from "lucide-react";
@@ -18,7 +15,7 @@ const Services = () => {
   const services = [
     {
       title: "Private Label Clothing",
-      description: "Tack Apparels is a quality-driven private-label clothing manufacturer that serves the needs of well-known companies and a brand-new clothing line. In the high need for private labels, we are here by your side as the finest option to stand out in the congested apparels industry.",
+      description: "Leuk Apparels is a quality-driven private-label clothing manufacturer that serves the needs of well-known companies and a brand-new clothing line. In the high need for private labels, we are here by your side as the finest option to stand out in the congested apparels industry.",
       image: privateLabelImg,
       link: "#",
     },
@@ -42,13 +39,13 @@ const Services = () => {
     },
     {
       title: "Hoodie Manufacturers",
-      description: "Tack Apparels uses a variety of custom clothing, you can create your very own brand of a customized hoodie. Showcase incredibly high-quality custom-made hoodies that satisfy the needs and preferences of your target markets to make a powerful message for your company.",
+      description: "Leuk Apparels uses a variety of custom clothing, you can create your very own brand of a customized hoodie. Showcase incredibly high-quality custom-made hoodies that satisfy the needs and preferences of your target markets to make a powerful message for your company.",
       image: hoodieImg,
       link: "#",
     },
     {
       title: "Sportswear Manufacturers",
-      description: "Build your custom fitness apparels manufacturer brand with Tack Apparels. Send us any reference drawings, pictures, and design files, and the rest is up to us. We will help you every step of the way, from sampling to manufacturing.",
+      description: "Build your custom fitness apparels manufacturer brand with Leuk Apparels. Send us any reference drawings, pictures, and design files, and the rest is up to us. We will help you every step of the way, from sampling to manufacturing.",
       image: sportswearImg,
       link: "#",
     },
@@ -56,24 +53,6 @@ const Services = () => {
       title: "Custom Sweatshirt Maker",
       description: "If you choose us as your custom sweatshirt manufacturer, we can offer you clothing in a variety of styles, colors, and sizes for adults, children, and infants. You can choose from a wide variety of customization options for your personalized sweatshirts at our facilities.",
       image: sweatshirtImg,
-      link: "#",
-    },
-    {
-      title: "Leather Manufacturers",
-      description: "We produce leather goods that inspire consumers to feel strong and take action. Tack apparels is your go-to premium leather goods manufacturer whether you wish to expand with new products, add an accessory line to your existing product line, or enhance your manufacturing process.",
-      image: leatherImg,
-      link: "#",
-    },
-    {
-      title: "Custom Made Swimsuits",
-      description: "Get an exclusive line of custom-made swimwear from a Tack manufacturer that specializes in making conventional to complicated swimwear designs. We are committed to providing entrepreneurs who are entering the fashion industry with the tools and market-appropriate growth methods.",
-      image: swimwearImg,
-      link: "#",
-    },
-    {
-      title: "Jeans Manufacturer",
-      description: "To start your premium jeans brand you are at the right place, our approach to manufacturing for the designing and creating of the jeans is simple. Our flexible service encompasses all of these elements, in addition to denim fabric, trimming, cut-and-sew manufacturing, and a full garment production solution.",
-      image: jeansImg,
       link: "#",
     },
     {
@@ -96,11 +75,11 @@ const Services = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Tack Clothing Manufacturer Services, We Offer
+            Leuk Clothing Manufacturer Services, We Offer
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             You get everything you need to start your fashion line, corporate business, and accessory.
-            Let's be distinctive, with Tack apparels.
+            Let's be distinctive, with Leuk apparels.
           </p>
         </div>
 
@@ -125,7 +104,7 @@ const Services = () => {
                     <ArrowRight className="w-5 h-5" />
                   </a>
                 </div>
-                <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
+                <p className="text-muted-foreground leading-relaxed mb-4 text-sm text-justify">
                   {service.description}
                 </p>
                 <Button

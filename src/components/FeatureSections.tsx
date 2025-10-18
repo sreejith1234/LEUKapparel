@@ -8,11 +8,11 @@ const FeatureSections = () => {
   const features = [
     {
       title: "A Leading Custom Clothing Manufacturer for Small Business",
-      description: "If you are searching for a tried-and-true systematic approach, Tack apparels is the best custom clothing manufacturer for small and large businesses. One-stop custom apparels manufacturer with extensive experience in the production of clothing, we uphold friendly associations with fashionistas.",
+      description: "If you are searching for a tried-and-true systematic approach, Leuk apparels is the best custom clothing manufacturer for small and large businesses. One-stop custom apparels manufacturer with extensive experience in the production of clothing, we uphold friendly associations with fashionistas.",
       image: smallBusinessBg,
     },
     {
-      title: "Explore Reputable Custom Clothing Manufacturers in the USA",
+      title: "Explore Reputable Custom Clothing Manufacturers in the INDIA",
       description: "From sketch and design to pattern making, sample production, and packing/shipping, we handle the entire manufacturing process. With us, you can get everything you need to manufacture under one roof. Contact us now for better consultation!",
       image: reputableBg,
       isRight: true,
@@ -47,7 +47,7 @@ const FeatureSections = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 {feature.title}
               </h2>
-              <p className="text-white/90 text-lg leading-relaxed mb-8">
+              <p className="text-white/90 text-lg leading-relaxed mb-8 text-justify">
                 {feature.description}
               </p>
               <Button 
