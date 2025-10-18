@@ -125,7 +125,7 @@ const TShirts = () => {
 
       {/* Sustainable Manufacturing Section */}
       <section 
-        className="relative h-[400px] flex items-center justify-center text-center bg-cover bg-center"
+        className="relative h-screen flex items-center bg-cover bg-center"
         style={{ backgroundImage: `url(${tshirtw})` }}
       >
         <div className="absolute inset-0 bg-black/50" />

@@ -131,7 +131,7 @@ const TrackPants = () => {
       </section>
 
       {/* Sustainable Manufacturing Section */}
-      <section className="relative min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative h-screen flex items-center bg-cover bg-center">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${track2Img})`, transform: 'scaleX(-1)' }}

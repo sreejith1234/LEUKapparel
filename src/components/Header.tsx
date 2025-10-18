@@ -71,7 +71,7 @@ const Header = () => {
                           <Link
                             key={category}
                             to={categoryPath}
-                            className={`block px-4 py-2 text-sm transition-colors ${
+                            className={`block px-4 py-2 text-sm transition-colors rounded-md ${
                               isActive
                                 ? 'bg-accent text-accent-foreground'
                                 : 'text-gray-700 hover:bg-gray-100 hover:text-accent'
