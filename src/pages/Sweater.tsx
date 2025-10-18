@@ -8,7 +8,7 @@ import sweatersmokeImg from "@/assets/sweatersmoke.jpg";
 import sweaterfogImg from "@/assets/sweaterfog.jpg";
 import sweater1Img from "@/assets/Sweater1.png";
 import sweater2Img from "@/assets/Sweater2.png";
-import sweater3Img from "@/assets/Sweater3.png";
+import sweater3Img from "@/assets/sweater3.png";
 
 const Sweater = () => {
   const sweaterTypes = [
