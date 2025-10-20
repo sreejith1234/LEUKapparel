@@ -13,10 +13,10 @@ const DesignSection = () => {
     >
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center md:text-justify">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center md:text-left lg:text-justify">
             Design Something Unique With Us
           </h2>
-          <p className="text-white/90 text-lg leading-relaxed mb-8 text-justify">
+          <p className="text-white/90 text-lg leading-relaxed mb-8 text-left lg:text-justify">
             Want to avoid dealing with design and sourcing hassles? We add your labels, logos, and more to our blanks to make them unique.
           </p>
           <Button 

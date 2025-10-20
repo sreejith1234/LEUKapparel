@@ -10,6 +10,11 @@ import TShirts from "./pages/TShirts";
 import TrackPants from "./pages/TrackPants";
 import Hoodies from "./pages/Hoodies";
 import Sweater from "./pages/Sweater";
+import CutAndSew from "./pages/CutAndSew";
+import ScreenPrinting from "./pages/ScreenPrinting";
+import SublimationPrinting from "./pages/SublimationPrinting";
+import Embroidery from "./pages/Embroidery";
+import LabelingPackaging from "./pages/LabelingPackaging";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopButton from "./components/ScrollToTopButton";
@@ -34,6 +39,11 @@ const App = () => (
             <Route path="/products/track-pants" element={<TrackPants />} />
             <Route path="/products/hoodies" element={<Hoodies />} />
             <Route path="/products/sweater" element={<Sweater />} />
+            <Route path="/services/cut-and-sew-clothing" element={<CutAndSew />} />
+            <Route path="/services/screen-printing" element={<ScreenPrinting />} />
+            <Route path="/services/sublimation-printing" element={<SublimationPrinting />} />
+            <Route path="/services/embroidery" element={<Embroidery />} />
+            <Route path="/services/labeling-and-packaging" element={<LabelingPackaging />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

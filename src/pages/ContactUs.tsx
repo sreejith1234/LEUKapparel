@@ -13,7 +13,7 @@ const ContactUs = () => {
       
       {/* Hero Section */}
       <section 
-        className="relative h-[400px] flex items-center justify-center text-center bg-cover bg-center"
+        className="relative h-[200px] flex items-center justify-center text-center bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className="absolute inset-0 bg-black/60" />
@@ -138,7 +138,7 @@ const ContactUs = () => {
 
                 <Button 
                   type="submit"
-                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground py-3 rounded-md font-medium"
+                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground py-3 rounded-none font-medium"
                 >
                   Submit
                 </Button>

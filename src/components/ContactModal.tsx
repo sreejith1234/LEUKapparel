@@ -84,7 +84,7 @@ const ContactModal = () => {
           
           <Button
             type="submit"
-            className="w-full bg-accent hover:bg-accent/90 text-accent-foreground py-3 rounded-md"
+            className="w-full bg-accent hover:bg-accent/90 text-accent-foreground py-3 rounded-none"
           >
             SUBMIT
           </Button>

@@ -8,25 +8,23 @@ import track2Img from "@/assets/track2.jpg";
 import trackPants1Img from "@/assets/track_pants1.png";
 import trackPants2Img from "@/assets/track_pants2.webp";
 import trackPants3Img from "@/assets/track_pants3.png";
+import trackPants4Img from "@/assets/track_pants4.webp";
 
 
 const TrackPants = () => {
   const trackPantsTypes = [
     {
-      title: "Athletic Track Pants",
-      description: "Experience the perfect blend of comfort and style with our premium tracksuit pants. Each pair is crafted to meet the highest standards of quality and performance, ensuring long-lasting wear and a flawless fit",
       image: trackPants2Img,
     },
     {
-      title: "Jogger Track Pants",
-      description: "With a wide range of customization options, we bring your brand’s unique identity to life. Our tracksuit bottoms offer unmatched comfort, durability, and versatility, available in various styles — from classic relaxed fits and modern joggers to tapered, slim-fit, cargo, flare-leg, and tech-fabric designs",
       image: trackPants3Img,
     },
     {
-      title: "Slim Fit Track Pants",
-      description: "Every style is tailored to suit different activities and fashion preferences, striking the ideal balance between comfort, functionality, and contemporary appeal.",
       image: trackPants1Img,
-    }
+    },
+    {
+      image: trackPants4Img,
+    },
   ];
 
   return (
@@ -34,68 +32,67 @@ const TrackPants = () => {
       <Header />
       
       {/* Hero Section */}
-      <section 
-        className="relative h-[400px] flex items-center justify-center text-center bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <div className="max-w-[60rem] mx-auto">
-            <h1 className="text-3xl md:text-4xl font-normal text-white mb-6">
-              Custom track pants crafted for all-day comfort, durability, and a perfect team fit.
-            </h1>
-            <p className="text-md text-white/90 mb-8 leading-relaxed">
-              Crafted for warmth, style, and durability—perfect for mountain treks or cozy days 
-            </p>
-            <Button 
-              variant="outline"
-              className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition-all duration-300 px-8 py-6"
-            >
-              GET STARTED
-            </Button>
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6 order-2 lg:order-1">
+              <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Custom Track Pants
+              </h1>
+              <p className="text-lg text-muted-foreground mb-4">
+                Crafted for all-day comfort, durability, and a perfect team fit
+              </p>
+              <p className="text-lg font-semibold text-foreground">
+                Experience the perfect blend of comfort and style with our premium tracksuit pants. Each pair is crafted to meet the highest standards of quality and performance.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Crafted for warmth, style, and durability—perfect for mountain treks, cozy days, or professional team wear.
+              </p>
+            </div>
+            <div className="overflow-hidden order-1 lg:order-2">
+              <img 
+                src={heroImage} 
+                alt="Custom Track Pants" 
+                className="w-full h-[300px] lg:h-[500px] object-cover rounded-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Image Grid Section */}
+      <section className="pt-16 pb-4 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+              {trackPantsTypes.map((type, index) => (
+                <div key={index} className="aspect-square">
+                  <img
+                    src={type.image}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Track Pants Types Section */}
-      <section className="py-20 bg-background">
+      <section className="pt-4 pb-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <p className="text-sm font-normal mb-2 tracking-widest uppercase text-muted-foreground">
-              OUR SERVICE OFFER
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Find the perfect custom Track Pants manufacturer to meet your athletic and commercial requirements
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {trackPantsTypes.map((type, index) => (
-              <Card key={index} className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="relative h-80 overflow-hidden">
-                  <img
-                    src={type.image}
-                    alt={type.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6 flex flex-col h-full">
-                  <h3 className="text-xl font-bold text-foreground mb-4 text-center md:text-justify">
-                    {type.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-6 text-sm text-justify flex-grow">
-                    {type.description}
-                  </p>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300"
-                  >
-                    GET A QUOTE
-                  </Button>
-                </div>
-              </Card>
-            ))}
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="space-y-6 text-left lg:text-justify">
+              <p className="text-lg text-foreground leading-relaxed">
+                Experience the perfect blend of <span className="font-bold">comfort and style</span> with our premium tracksuit pants. Each pair is crafted to meet the <span className="font-bold">highest standards of quality and performance</span>, ensuring long-lasting wear and a flawless fit.
+              </p>
+              <p className="text-lg text-foreground leading-relaxed">
+                With a wide range of <span className="font-bold">customization options</span>, we bring your brand's unique identity to life. Our tracksuit bottoms offer <span className="font-bold">unmatched comfort, durability, and versatility</span>, available in various styles — from <span className="font-bold">classic relaxed fits</span> and <span className="font-bold">modern joggers</span> to <span className="font-bold">tapered, slim-fit, cargo, flare-leg</span>, and <span className="font-bold">tech-fabric designs</span>.
+              </p>
+              <p className="text-lg text-foreground leading-relaxed">
+                Every style is tailored to suit different activities and fashion preferences, striking the ideal balance between <span className="font-bold">comfort, functionality, and contemporary appeal</span>.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -111,19 +108,19 @@ const TrackPants = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Professional & Reliable Tone
             </h2>
-            <p className="text-white/90 text-lg leading-relaxed mb-2 text-justify">
+            <p className="text-white/90 text-lg leading-relaxed mb-2 text-left lg:text-justify">
               Customized Tracksuits Perfect for Teams, Workforces, and Events.
             </p>
-            <p className="text-white/90 text-lg leading-relaxed mb-2 text-justify">
+            <p className="text-white/90 text-lg leading-relaxed mb-2 text-left lg:text-justify">
               Premium Comfort. Consistent Quality. Perfect for Every Team
             </p>
-            <p className="text-white/90 text-lg leading-relaxed mb-2 text-justify">
+            <p className="text-white/90 text-lg leading-relaxed mb-2 text-left lg:text-justify">
               Designed for Uniformity. Built for Everyday Performance
             </p>
-            <p className="text-white/90 text-lg leading-relaxed mb-2 text-justify">
+            <p className="text-white/90 text-lg leading-relaxed mb-2 text-left lg:text-justify">
               Smart. Durable. Custom-Made for Your Brand
             </p>
-            <p className="text-white/90 text-lg leading-relaxed mb-2 text-justify">
+            <p className="text-white/90 text-lg leading-relaxed mb-2 text-left lg:text-justify">
               Your Ideal Partner for Bulk and Corporate Tracksuit Manufacturing
             </p>
           </div>
@@ -138,7 +135,7 @@ const TrackPants = () => {
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 container mx-auto px-4">
-          <div className="max-w-2xl ml-auto text-right">
+          <div className="max-w-2xl ml-auto text-left lg:text-right">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Engaging & Modern Tone
             </h2>

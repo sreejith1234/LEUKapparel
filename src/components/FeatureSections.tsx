@@ -43,16 +43,16 @@ const FeatureSections = () => {
           }}
         >
           <div className="container mx-auto px-4 py-20">
-            <div className={`max-w-2xl ${feature.isRight ? 'ml-auto text-right' : ''}`}>
+            <div className={`max-w-2xl ${feature.isRight ? 'ml-auto text-left lg:text-right' : ''}`}>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 {feature.title}
               </h2>
-              <p className="text-white/90 text-lg leading-relaxed mb-8 text-justify">
+              <p className="text-white/90 text-lg leading-relaxed mb-8 text-left lg:text-justify">
                 {feature.description}
               </p>
               <Button 
                 variant="outline"
-                className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition-all duration-300 px-8 py-6 text-base"
+                className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition-all duration-300 px-8 py-6 text-base rounded-none"
               >
                 INQUIRE NOW
               </Button>

@@ -1,19 +1,25 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Search, ChevronDown } from "lucide-react";
+import { Menu, X, Search, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/logo.png";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const servicesDropdownRef = useRef(null);
+  const hoverTimeoutRef = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setProductsDropdownOpen(false);
+      }
+      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target)) {
+        setServicesDropdownOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -23,15 +29,24 @@ const Header = () => {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Who we Are", href: "/who-we-are" },
-    { name: "Our Products", href: "#", hasDropdown: true },
+    { name: "Our Products", href: "#", hasDropdown: true, type: "products" },
+    { name: "Services", href: "#", hasDropdown: true, type: "services" },
     { name: "Contact Us", href: "/contact-us" },
   ];
 
   const productCategories = [
-    "Hoodies",
-    "Sweater",
+    "T-Shirts", 
     "Track Pants",
-    "T-Shirts"
+    "Hoodies",
+    "Sweater"
+  ];
+
+  const serviceCategories = [
+    "Cut & Sew Clothing",
+    "Screen Printing", 
+    "Sublimation Printing",
+    "Embroidery",
+    "Labeling & Packaging"
   ];
 
   return (
@@ -50,46 +65,68 @@ const Header = () => {
           <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               item.hasDropdown ? (
-                <div key={item.name} className="relative" ref={dropdownRef}>
-                  <button
-                    className={`relative flex items-center text-sm font-normal transition-colors duration-300 after:absolute after:bottom-[-8px] after:left-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 ${
-                      location.pathname.startsWith('/products/')
-                        ? 'text-accent after:w-full'
-                        : 'text-white hover:text-accent after:w-0 hover:after:w-full'
-                    }`}
-                    onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
-                  >
-                    {item.name}
-                    <ChevronDown className="w-4 h-4 ml-1" />
-                  </button>
-                  {productsDropdownOpen && (
-                    <div className="absolute top-full left-0 mt-4 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50">
-                      {productCategories.map((category) => {
-                        const categoryPath = `/products/${category.toLowerCase().replace(/\s+/g, '-')}`;
+                <div 
+                  key={item.name} 
+                  className="relative h-20 flex items-center" 
+                  ref={item.type === 'products' ? dropdownRef : servicesDropdownRef}
+                  onMouseEnter={() => {
+                    setProductsDropdownOpen(false);
+                    setServicesDropdownOpen(false);
+                    item.type === 'products' ? setProductsDropdownOpen(true) : setServicesDropdownOpen(true);
+                  }}
+                  onMouseLeave={() => {
+                    hoverTimeoutRef.current = setTimeout(() => {
+                      item.type === 'products' ? setProductsDropdownOpen(false) : setServicesDropdownOpen(false);
+                    }, 150);
+                  }}
+                >
+                  <div className="relative">
+                    <button
+                      className={`relative flex items-center text-sm font-normal transition-colors duration-300 after:absolute after:top-[-8px] after:left-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 ${
+                        (item.type === 'products' && location.pathname.startsWith('/products/')) || (item.type === 'services' && location.pathname.startsWith('/services/'))
+                          ? 'text-accent after:w-full'
+                          : 'text-white hover:text-accent after:w-0 hover:after:w-full'
+                      }`}
+                    >
+                      {item.name}
+                    </button>
+                    {((item.type === 'products' && productsDropdownOpen) || (item.type === 'services' && servicesDropdownOpen)) && (
+                      <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50 p-2 before:content-[''] before:absolute before:top-[-6px] before:left-4 before:w-0 before:h-0 before:border-l-[6px] before:border-r-[6px] before:border-b-[6px] before:border-l-transparent before:border-r-transparent before:border-b-white">
+                      {(item.type === 'products' ? productCategories : serviceCategories).map((category) => {
+                        const categoryPath = item.type === 'products' 
+                          ? `/products/${category.toLowerCase().replace(/\s+/g, '-')}`
+                          : `/services/${category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`;
                         const isActive = location.pathname === categoryPath;
                         return (
                           <Link
                             key={category}
                             to={categoryPath}
-                            className={`block px-4 py-2 text-sm transition-colors rounded-md ${
+                            className={`group flex items-center px-2 py-2 text-sm transition-all duration-300 ${
                               isActive
-                                ? 'bg-accent text-accent-foreground'
-                                : 'text-gray-700 hover:bg-gray-100 hover:text-accent'
+                                ? 'text-accent'
+                                : 'text-gray-700 hover:text-accent'
                             }`}
-                            onClick={() => setProductsDropdownOpen(false)}
+                            onClick={() => {
+                              setProductsDropdownOpen(false);
+                              setServicesDropdownOpen(false);
+                            }}
                           >
-                            {category}
+                            <ArrowRight className={`w-4 h-4 mr-2 transition-all duration-300 ${
+                              isActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'
+                            }`} style={{ strokeLinecap: 'round', strokeLinejoin: 'round' }} />
+                            <span>{category}</span>
                           </Link>
                         );
                       })}
-                    </div>
-                  )}
+                      </div>
+                    )}
+                  </div>
                 </div>
               ) : item.href.startsWith('/') ? (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`relative text-sm font-normal transition-colors duration-300 after:absolute after:bottom-[-8px] after:left-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 ${
+                  className={`relative text-sm font-normal transition-colors duration-300 after:absolute after:top-[-8px] after:left-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 ${
                     location.pathname === item.href
                       ? 'text-accent after:w-full'
                       : 'text-white hover:text-accent after:w-0 hover:after:w-full'
@@ -101,7 +138,7 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="relative text-sm font-normal text-white hover:text-accent transition-colors duration-300 after:absolute after:bottom-[-8px] after:left-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                  className="relative text-sm font-normal text-white hover:text-accent transition-colors duration-300 after:absolute after:top-[-8px] after:left-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {item.name}
                 </a>
@@ -111,7 +148,7 @@ const Header = () => {
 
           {/* Right side - Search */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="ghost" size="icon" className="hover:bg-primary-foreground/10 hidden">
+            <Button variant="ghost" size="icon" className="hover:bg-primary-foreground/10 hidden rounded-none">
               <Search className="w-5 h-5" />
             </Button>
           </div>
@@ -120,7 +157,7 @@ const Header = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden hover:bg-primary-foreground/10"
+            className="lg:hidden hover:bg-primary-foreground/10 rounded-none"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -136,15 +173,17 @@ const Header = () => {
               item.hasDropdown ? (
                 <div key={item.name}>
                   <div className={`text-sm font-normal py-2 ${
-                    location.pathname.startsWith('/products/')
+                    (item.type === 'products' && location.pathname.startsWith('/products/')) || (item.type === 'services' && location.pathname.startsWith('/services/'))
                       ? 'text-accent'
                       : 'text-white'
                   }`}>
                     {item.name}
                   </div>
                   <div className="ml-4 space-y-2">
-                    {productCategories.map((category) => {
-                      const categoryPath = `/products/${category.toLowerCase().replace(/\s+/g, '-')}`;
+                    {(item.type === 'products' ? productCategories : serviceCategories).map((category) => {
+                      const categoryPath = item.type === 'products' 
+                        ? `/products/${category.toLowerCase().replace(/\s+/g, '-')}`
+                        : `/services/${category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`;
                       const isActive = location.pathname === categoryPath;
                       return (
                         <Link
