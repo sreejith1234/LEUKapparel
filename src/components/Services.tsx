@@ -3,13 +3,28 @@ import privateLabelImg from "@/assets/private-label.jpg";
 import cutSewImg from "@/assets/cut-sew.jpg";
 import uniformImg from "@/assets/uniform.jpg";
 import sportswearImg from "@/assets/sportswear.jpg";
+import officeImg from "@/assets/office.jpg";
+import workImg from "@/assets/work.jpg";
+import aviationImg from "@/assets/aviation.jpg";
+import customImg from "@/assets/custom.jpg";
+import medicalImg from "@/assets/medical.jpg";
 
 const Services = () => {
   const services = [
     {
+      title: "Corporate & Office Uniforms",
+      description: "Professional corporate uniforms for offices, banks, and business environments with modern designs and quality fabrics.",
+      image: officeImg,
+    },
+    {
+      title: "School & Educational Uniforms",
+      description: "Comfortable and durable school uniforms for students and educational institutions with customizable designs.",
+      image: uniformImg,
+    },
+    {
       title: "Healthcare & Medical Uniforms",
       description: "Professional medical uniforms designed for healthcare workers including scrubs, lab coats, and medical accessories.",
-      image: cutSewImg,
+      image: medicalImg,
     },
     {
       title: "Hospitality & Service Industry Uniforms",
@@ -17,14 +32,24 @@ const Services = () => {
       image: privateLabelImg,
     },
     {
-      title: "Industrial & Workwear",
-      description: "Durable workwear and safety uniforms for industrial environments, construction, and manufacturing sectors.",
-      image: uniformImg,
-    },
-    {
       title: "Sports & Fitness Uniforms",
       description: "Athletic uniforms and sportswear for teams, fitness centers, and sports organizations with custom designs.",
       image: sportswearImg,
+    },
+    {
+      title: "Aviation & Travel",
+      description: "Professional uniforms for airlines, travel agencies, and transportation services with elegant and functional designs.",
+      image: aviationImg,
+    },
+    {
+      title: "Custom Promotional Uniforms",
+      description: "Branded promotional uniforms for events, marketing campaigns, and corporate branding with custom logos and designs.",
+      image: customImg,
+    },
+    {
+      title: "Industrial & Workwear",
+      description: "Durable workwear and safety uniforms for industrial environments, construction, and manufacturing sectors.",
+      image: workImg,
     },
   ];
 
