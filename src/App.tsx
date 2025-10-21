@@ -15,6 +15,7 @@ import ScreenPrinting from "./pages/ScreenPrinting";
 import SublimationPrinting from "./pages/SublimationPrinting";
 import Embroidery from "./pages/Embroidery";
 import LabelingPackaging from "./pages/LabelingPackaging";
+import Portfolio from "./pages/Portfolio";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopButton from "./components/ScrollToTopButton";
@@ -34,6 +35,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/who-we-are" element={<WhoWeAre />} />
+            <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/products/t-shirts" element={<TShirts />} />
             <Route path="/products/track-pants" element={<TrackPants />} />

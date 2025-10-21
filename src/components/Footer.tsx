@@ -1,23 +1,28 @@
 import { Facebook, Instagram, Twitter, Github } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/logo.png";
 
 const Footer = () => {
   const pages = [
     { name: "Home", href: "/" },
     { name: "Who we Are", href: "/who-we-are" },
-    { name: "Services", href: "#" },
+    { name: "Portfolio", href: "/portfolio" },
     { name: "Contact Us", href: "/contact-us" }
   ];
   
-  const products1 = [
-    { name: "Hoodies", href: "/products/hoodies" },
-    { name: "Sweater", href: "/products/sweater" },
-    { name: "Track Pants", href: "/products/track-pants" },
-    { name: "T-Shirts", href: "/products/t-shirts" }
+  const productCategories = [
+    "T-Shirts", 
+    "Track Pants",
+    "Hoodies",
+    "Sweater"
   ];
   
-  const services = [
-    "Screen Printing", "Sublimation Printing", "Custom Embroidery", "Cut and Sew"
+  const serviceCategories = [
+    "Cut & Sew Clothing",
+    "Screen Printing", 
+    "Sublimation Printing",
+    "Embroidery",
+    "Labeling & Packaging"
   ];
 
   return (
@@ -72,9 +77,9 @@ const Footer = () => {
             <ul className="space-y-3">
               {pages.map((page, index) => (
                 <li key={index}>
-                  <a href={page.href} className="text-sm text-slate-400 hover:text-white transition-colors">
+                  <Link to={page.href} className="text-sm text-slate-400 hover:text-white transition-colors">
                     {page.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -84,13 +89,16 @@ const Footer = () => {
           <div>
             <h3 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Products</h3>
             <ul className="space-y-3">
-              {products1.map((product, index) => (
-                <li key={index}>
-                  <a href={product.href} className="text-sm text-slate-400 hover:text-white transition-colors">
-                    {product.name}
-                  </a>
-                </li>
-              ))}
+              {productCategories.map((category, index) => {
+                const categoryPath = `/products/${category.toLowerCase().replace(/\s+/g, '-')}`;
+                return (
+                  <li key={index}>
+                    <Link to={categoryPath} className="text-sm text-slate-400 hover:text-white transition-colors">
+                      {category}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -98,13 +106,16 @@ const Footer = () => {
           <div>
             <h3 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Services</h3>
             <ul className="space-y-3">
-              {services.map((service, index) => (
-                <li key={index}>
-                  <a href="#" className="text-sm text-slate-400 hover:text-white transition-colors">
-                    {service}
-                  </a>
-                </li>
-              ))}
+              {serviceCategories.map((category, index) => {
+                const categoryPath = `/services/${category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`;
+                return (
+                  <li key={index}>
+                    <Link to={categoryPath} className="text-sm text-slate-400 hover:text-white transition-colors">
+                      {category}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
