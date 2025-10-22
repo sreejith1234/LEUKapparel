@@ -5,8 +5,46 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Building, MapPin, Mail, Phone } from "lucide-react";
 import heroImage from "@/assets/contactus.jpg";
+import { useState } from "react";
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    try {
+      const response = await fetch('./contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        alert('Message sent successfully!');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        alert('Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      alert('Failed to send message. Please try again.');
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -88,15 +126,18 @@ const ContactUs = () => {
             <div className="bg-white p-8 rounded-lg border shadow-sm">
               <h2 className="text-2xl font-bold text-accent mb-8">SEND US A MESSAGE</h2>
               
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Name *
                   </label>
                   <Input 
                     type="text" 
+                    name="name"
                     placeholder="Name"
                     className="w-full"
+                    value={formData.name}
+                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -107,8 +148,11 @@ const ContactUs = () => {
                   </label>
                   <Input 
                     type="email" 
+                    name="email"
                     placeholder="Email"
                     className="w-full"
+                    value={formData.email}
+                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -119,8 +163,11 @@ const ContactUs = () => {
                   </label>
                   <Input 
                     type="tel" 
+                    name="phone"
                     placeholder="Phone"
                     className="w-full"
+                    value={formData.phone}
+                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -130,8 +177,11 @@ const ContactUs = () => {
                     Message *
                   </label>
                   <Textarea 
+                    name="message"
                     placeholder="Message"
                     className="w-full h-32 resize-none"
+                    value={formData.message}
+                    onChange={handleChange}
                     required
                   />
                 </div>

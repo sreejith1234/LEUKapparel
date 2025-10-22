@@ -2,9 +2,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Scissors, Palette, Shirt, Building, Zap, Award, Circle, Minus } from "lucide-react";
-import heroImage from "@/assets/hero-clothing.jpg";
+import heroImage from "@/assets/Portfolio.png";
+import { useContactModal } from "@/contexts/ContactModalContext";
 
 const Portfolio = () => {
+  const { openModal } = useContactModal();
+  
   const expertise = [
     { icon: Scissors, title: "Cut & Sew Manufacturing", desc: "Precision tailoring for custom apparel designs." },
     { icon: Palette, title: "Screen Printing", desc: "Long-lasting, vibrant prints for t-shirts, hoodies, and activewear." },
@@ -60,54 +63,27 @@ const Portfolio = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-32 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
-
-        
-        {/* Floating Decorative Elements */}
-        <div className="absolute inset-0 pointer-events-none z-10">
-          {/* Scissors */}
-          <Scissors className="absolute top-20 left-10 w-8 h-8 text-primary/20 animate-pulse" style={{transform: 'rotate(15deg)'}} />
-          <Scissors className="absolute bottom-20 right-1/3 w-5 h-5 text-primary/20 animate-bounce" style={{transform: 'rotate(-15deg)', animationDelay: '0.5s'}} />
-          
-          {/* Thread Spools (using emojis) */}
-          <span className="absolute top-48 left-20 text-xl animate-bounce" style={{animationDelay: '2s', filter: 'hue-rotate(120deg)'}}>🧵</span>
-          <span className="absolute bottom-32 right-20 text-lg animate-bounce" style={{animationDelay: '0.8s', filter: 'hue-rotate(240deg)'}}>🧵</span>
-          
-          {/* Buttons (using Circle with different colors) */}
-          <Circle className="absolute top-60 left-1/3 w-4 h-4 text-indigo-400/40 fill-current animate-pulse" style={{animationDelay: '2.2s'}} />
-          <Circle className="absolute top-24 right-1/4 w-3 h-3 text-pink-400/40 fill-current animate-bounce" style={{animationDelay: '1.8s'}} />
-          <Circle className="absolute bottom-48 right-1/4 w-5 h-5 text-teal-400/40 fill-current animate-pulse" style={{animationDelay: '0.3s'}} />
-          
-
-          
-
-          
-          {/* Wavy thread lines */}
-          <svg className="absolute top-1/3 right-1/4 w-20 h-8 text-orange-400/30 animate-pulse" style={{animationDelay: '1.8s'}}>
-            <path d="M 0 4 Q 5 0 10 4 T 20 4" stroke="currentColor" strokeWidth="2" fill="none" />
-          </svg>
-          <svg className="absolute bottom-1/4 left-1/5 w-16 h-6 text-cyan-400/30 animate-bounce" style={{animationDelay: '0.6s'}}>
-            <path d="M 0 3 Q 4 0 8 3 T 16 3" stroke="currentColor" strokeWidth="2" fill="none" />
-          </svg>
-          <svg className="absolute top-1/2 left-1/3 w-24 h-10 text-amber-400/25 animate-pulse" style={{animationDelay: '2.3s'}}>
-            <path d="M 0 5 Q 6 0 12 5 T 24 5" stroke="currentColor" strokeWidth="2" fill="none" />
-          </svg>
-          <svg className="absolute bottom-1/3 right-1/5 w-18 h-7 text-emerald-400/30 animate-bounce" style={{animationDelay: '1.1s'}}>
-            <path d="M 0 3.5 Q 4.5 0 9 3.5 T 18 3.5" stroke="currentColor" strokeWidth="2" fill="none" />
-          </svg>
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-8 leading-tight">
-              Our Portfolio – Crafted With Precision, Worn With Pride
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-6 max-w-3xl mx-auto">
-              At Leuk Apparel, every garment we create tells a story — of craftsmanship, creativity, and commitment to quality. As a leading apparel manufacturer in India, we take pride in producing premium-quality clothing for global brands, startups, and fashion entrepreneurs who trust us to bring their designs to life.
-            </p>
-            <p className="text-lg text-foreground leading-relaxed max-w-2xl mx-auto">
-              Our portfolio reflects our diverse manufacturing expertise, covering everything from custom t-shirts and uniforms to sportswear, corporate apparel, and lifestyle clothing — each piece tailored to perfection.
-            </p>
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6 order-2 lg:order-1">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+                Our Portfolio – Crafted With Precision, Worn With Pride
+              </h1>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                At Leuk Apparel, every garment we create tells a story — of craftsmanship, creativity, and commitment to quality. As a leading apparel manufacturer in India, we take pride in producing premium-quality clothing for global brands, startups, and fashion entrepreneurs who trust us to bring their designs to life.
+              </p>
+              <p className="text-lg text-foreground leading-relaxed">
+                Our portfolio reflects our diverse manufacturing expertise, covering everything from custom t-shirts and uniforms to sportswear, corporate apparel, and lifestyle clothing — each piece tailored to perfection.
+              </p>
+            </div>
+            <div className="overflow-hidden order-1 lg:order-2">
+              <img 
+                src={heroImage} 
+                alt="Portfolio" 
+                className="w-full h-[300px] lg:h-[500px] object-cover rounded-2xl"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -198,6 +174,7 @@ const Portfolio = () => {
           <Button 
             variant="outline"
             className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition-all duration-300 px-8 py-6 rounded-none text-lg"
+            onClick={openModal}
           >
             → Get in touch with Leuk Apparel today to start your next project
           </Button>

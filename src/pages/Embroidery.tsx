@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import heroImage from "@/assets/design-unique.jpg";
+import heroImage from "@/assets/embroidery.webp";
 import garmentsImg from "@/assets/reduced-prices.jpg";
 
 const Embroidery = () => {

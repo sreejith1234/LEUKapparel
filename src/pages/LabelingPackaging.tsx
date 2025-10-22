@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/private-label.jpg";
+import heroImage from "@/assets/labeling_repacking.webp";
 import labelingImg from "@/assets/innovative-thoughts.jpg";
 import packagingImg from "@/assets/small-business.jpg";
 

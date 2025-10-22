@@ -8,8 +8,11 @@ import vneckImg from "@/assets/vneck_ts.png";
 import poloImg from "@/assets/Polo_ts.png";
 import tshirtd from "@/assets/tshirtd.jpg";
 import tshirtw from "@/assets/tshirtw.jpg";
+import { useContactModal } from "@/contexts/ContactModalContext";
 
 const TShirts = () => {
+  const { openModal } = useContactModal();
+  
   const tshirtTypes = [
     {
       title: "T-shirts",
@@ -112,12 +115,6 @@ const TShirts = () => {
             <p className="text-white/90 text-lg leading-relaxed mb-8 text-left lg:text-justify">
               At Leuk Apparels, we understand that every brand has a unique story to tell. Our expert team specializes in creating custom t-shirts that perfectly capture your brand's essence through superior craftsmanship, innovative design techniques, and premium materials. From concept to completion, we ensure every piece reflects your vision with uncompromising quality and attention to detail.
             </p>
-            <Button 
-              variant="outline"
-              className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition-all duration-300 px-8 py-6 rounded-none"
-            >
-              INQUIRE NOW
-            </Button>
           </div>
         </div>
       </section>
@@ -136,12 +133,6 @@ const TShirts = () => {
             <p className="text-white/90 text-lg leading-relaxed mb-8 text-left lg:text-justify">
               Committed to environmental responsibility, Leuk Apparels leads the way in sustainable t-shirt manufacturing. We utilize eco-friendly materials, water-efficient processes, and non-toxic dyes to create premium garments that are kind to both your skin and the planet. Our sustainable practices ensure that every t-shirt we produce meets the highest environmental standards without compromising on quality or style.
             </p>
-            <Button 
-              variant="outline"
-              className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition-all duration-300 px-8 py-6 rounded-none"
-            >
-              INQUIRE NOW
-            </Button>
           </div>
         </div>
       </section>

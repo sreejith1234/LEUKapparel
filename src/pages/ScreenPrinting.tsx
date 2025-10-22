@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import heroImage from "@/assets/print1.jpg";
+import heroImage from "@/assets/Screen_Printing.webp";
 import garmentsImg from "@/assets/print2.jpg";
 
 const ScreenPrinting = () => {

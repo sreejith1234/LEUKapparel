@@ -19,10 +19,10 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center lg:text-justify lg:pr-20">
         <div className="max-w-2xl mx-auto lg:ml-auto lg:mr-0">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight text-center lg:text-justify">
+          <h1 className="text-3xl md:text-[2.5rem] lg:text-[2.75rem] font-semibold text-white mb-6 leading-none text-center lg:text-left tracking-normal">
             Search For the Best Clothing Manufacturers in INDIA
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 font-light leading-relaxed text-center lg:text-justify">
+          <p className="text-lg md:text-xl text-white/90 mb-8 font-medium leading-relaxed text-center lg:text-justify tracking-normal">
             Leuk Apparels combines quality, style, and innovation, offering a fashionable range of garments catering to diverse preferences.
           </p>
           <Button 
@@ -31,7 +31,7 @@ const Hero = () => {
             className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition-all duration-300 text-base px-8 py-6 rounded-none"
             onClick={openModal}
           >
-            GET STARTED
+            CONTACT US
           </Button>
         </div>
       </div>

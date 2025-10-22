@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import designUniqueBg from "@/assets/design-unique.jpg";
+import { useContactModal } from "@/contexts/ContactModalContext";
 
 const DesignSection = () => {
+  const { openModal } = useContactModal();
+  
   return (
     <section 
       className="relative min-h-[500px] flex items-center"
@@ -21,9 +24,10 @@ const DesignSection = () => {
           </p>
           <Button 
             variant="outline"
-            className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition-all duration-300 px-8 py-6 text-base"
+            className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition-all duration-300 px-8 py-6 text-base rounded-none"
+            onClick={openModal}
           >
-            INQUIRE NOW
+            CONTACT US
           </Button>
         </div>
       </div>

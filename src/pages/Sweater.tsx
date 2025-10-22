@@ -9,8 +9,11 @@ import sweaterfogImg from "@/assets/sweaterfog.jpg";
 import sweater1Img from "@/assets/Sweater1.png";
 import sweater2Img from "@/assets/Sweater2.png";
 import sweater3Img from "@/assets/sweater3.png";
+import { useContactModal } from "@/contexts/ContactModalContext";
 
 const Sweater = () => {
+  const { openModal } = useContactModal();
+  
   const sweaterTypes = [
     {
       title: "Premium Crew Sweaters",
@@ -113,12 +116,6 @@ const Sweater = () => {
             <p className="text-white/90 text-lg leading-relaxed mb-8 text-left lg:text-justify">
               At Leuk Apparels, we understand that every fashion brand has a unique aesthetic to express. Our expert team specializes in creating custom sweaters that perfectly capture your brand's elegance through superior craftsmanship, innovative knitting techniques, and premium yarn materials. From concept to completion, we ensure every piece reflects your vision with uncompromising quality and sophistication.
             </p>
-            <Button 
-              variant="outline"
-              className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition-all duration-300 px-8 py-6 rounded-none"
-            >
-              INQUIRE NOW
-            </Button>
           </div>
         </div>
       </section>
@@ -137,12 +134,6 @@ const Sweater = () => {
             <p className="text-white/90 text-lg leading-relaxed mb-8 text-left lg:text-justify">
               Committed to traditional craftsmanship, Leuk Apparels leads the way in premium sweater manufacturing. We utilize fine yarns, expert knitting techniques, and quality-enhancing processes to create exceptional knitwear that provides warmth and elegance. Our innovative manufacturing processes ensure that every sweater we produce meets the highest standards of comfort and style.
             </p>
-            <Button 
-              variant="outline"
-              className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition-all duration-300 px-8 py-6 rounded-none"
-            >
-              INQUIRE NOW
-            </Button>
           </div>
         </div>
       </section>

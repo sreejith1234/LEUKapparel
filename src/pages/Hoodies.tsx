@@ -6,8 +6,11 @@ import picturewImg from "@/assets/Picture1.png";
 import picturebImg from "@/assets/Picture2.png";
 import hoodiebImg from "@/assets/hoodiesb.jpg";
 import hoodiewImg from "@/assets/hoodiesw.jpg";
+import { useContactModal } from "@/contexts/ContactModalContext";
 
 const Hoodies = () => {
+  const { openModal } = useContactModal();
+  
   const hoodieTypes = [
     {
      image: picturewImg,
@@ -101,12 +104,6 @@ const Hoodies = () => {
             <p className="text-white/90 text-lg leading-relaxed mb-8 text-left lg:text-justify">
               At Leuk Apparels, we understand that every streetwear brand has a unique identity to express. Our expert team specializes in creating custom hoodies that perfectly capture your brand's vibe through superior craftsmanship, innovative design techniques, and premium fleece materials. From concept to completion, we ensure every piece reflects your vision with uncompromising quality and comfort.
             </p>
-            <Button 
-              variant="outline"
-              className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition-all duration-300 px-8 py-6 rounded-none"
-            >
-              INQUIRE NOW
-            </Button>
           </div>
         </div>
       </section>
@@ -125,12 +122,6 @@ const Hoodies = () => {
             <p className="text-white/90 text-lg leading-relaxed mb-8 text-left lg:text-justify">
               Committed to ultimate comfort, Leuk Apparels leads the way in premium hoodie manufacturing. We utilize soft fleece fabrics, ergonomic designs, and comfort-enhancing features to create exceptional casual wear that provides warmth and style. Our innovative manufacturing processes ensure that every hoodie we produce meets the highest comfort and quality standards.
             </p>
-            <Button 
-              variant="outline"
-              className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition-all duration-300 px-8 py-6 rounded-none"
-            >
-              INQUIRE NOW
-            </Button>
           </div>
         </div>
       </section>

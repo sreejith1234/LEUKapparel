@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/cut-sew.jpg";
+import heroImage from "@/assets/Cut_sew.webp";
 import manufacturingImg from "@/assets/cut1.jpg";
 import qualityImg from "@/assets/cut2.jpg";
 

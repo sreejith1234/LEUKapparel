@@ -1,8 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/sportswear.jpg";
-import capabilitiesImg from "@/assets/reduced-prices.jpg";
+import heroImage from "@/assets/sblimation_printing.webp";
 import garmentsImg from "@/assets/small-business.jpg";
 
 const SublimationPrinting = () => {
