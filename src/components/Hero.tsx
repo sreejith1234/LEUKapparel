@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero.jpg";
+import heroImage from "@/assets/Main_page_image.webp";
 import { useContactModal } from "@/contexts/ContactModalContext";
 
 const Hero = () => {
@@ -9,11 +9,10 @@ const Hero = () => {
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden pt-20">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-right md:bg-right-center scale-x-[-1]"
+        className="absolute inset-0 bg-cover bg-left md:bg-right-center"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/0" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/10 hidden md:block" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent from-30% to-black/60" />
       </div>
 
       {/* Content */}

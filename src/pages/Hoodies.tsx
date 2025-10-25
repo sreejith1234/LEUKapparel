@@ -1,11 +1,10 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-clothing.jpg";
-import picturewImg from "@/assets/Picture1.png";
-import picturebImg from "@/assets/Picture2.png";
-import hoodiebImg from "@/assets/hoodiesb.jpg";
-import hoodiewImg from "@/assets/hoodiesw.jpg";
+import heroImage from "@/assets/Hoodies1.webp";
+import hoodiebImg from "@/assets/hoodie2.webp";
+import hoodiewImg from "@/assets/hoodies3.webp";
+import picturewImg from "@/assets/Picture1.webp";
+import picturebImg from "@/assets/Picture2.webp";
 import { useContactModal } from "@/contexts/ContactModalContext";
 
 const Hoodies = () => {
@@ -99,10 +98,10 @@ const Hoodies = () => {
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-2xl">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Premium Custom Hoodie Manufacturing – Elevating Your Streetwear Brand
+              Premium Custom Hoodie Manufacturing for Streetwear Brands
             </h2>
             <p className="text-white/90 text-lg leading-relaxed mb-8 text-left lg:text-justify">
-              At Leuk Apparels, we understand that every streetwear brand has a unique identity to express. Our expert team specializes in creating custom hoodies that perfectly capture your brand's vibe through superior craftsmanship, innovative design techniques, and premium fleece materials. From concept to completion, we ensure every piece reflects your vision with uncompromising quality and comfort.
+              At <span className="font-bold">Leuk Apparels</span>, we bring your street wear vision to life with precision and passion. We specialize in crafting <span className="font-bold">high-quality custom hoodies</span> that embody your brand’s unique identity. Our experienced team combines <span className="font-bold">cutting-edge design techniques, superior craftsmanship</span>, and <span className="font-bold">luxurious fleece fabrics</span> to deliver hoodies that stand out in both style and comfort.
             </p>
           </div>
         </div>
@@ -117,10 +116,10 @@ const Hoodies = () => {
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-2xl ml-auto text-left lg:text-right">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Comfort Excellence – Premium Hoodie Manufacturing
+              Custom Hoodie Manufacturer | Premium Streetwear Production – Leuk Apparels
             </h2>
             <p className="text-white/90 text-lg leading-relaxed mb-8 text-left lg:text-justify">
-              Committed to ultimate comfort, Leuk Apparels leads the way in premium hoodie manufacturing. We utilize soft fleece fabrics, ergonomic designs, and comfort-enhancing features to create exceptional casual wear that provides warmth and style. Our innovative manufacturing processes ensure that every hoodie we produce meets the highest comfort and quality standards.
+              Leuk Apparels offers premium custom hoodie manufacturing for streetwear brands. High-quality fleece, private label options, and full-service apparel production. From initial concept to final production, we work closely with you to ensure every detail reflects your brand’s essence. Whether you're launching a new line or scaling your streetwear label, trust Leuk Apparels to deliver <span className="font-bold">exceptional quality and unmatched customization</span>.
             </p>
           </div>
         </div>

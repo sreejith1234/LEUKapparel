@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Building, MapPin, Mail, Phone } from "lucide-react";
-import heroImage from "@/assets/contactus.jpg";
+import heroImage from "@/assets/contactus.webp";
 import { useState } from "react";
 
 const ContactUs = () => {
@@ -16,27 +16,33 @@ const ContactUs = () => {
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    try {
-      const response = await fetch('./contact.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-      
-      const result = await response.json();
-      
-      if (result.success) {
-        alert('Message sent successfully!');
-        setFormData({ name: '', email: '', phone: '', message: '' });
-      } else {
-        alert('Failed to send message. Please try again.');
-      }
-    } catch (error) {
-      alert('Failed to send message. Please try again.');
+  e.preventDefault();
+
+  try {
+    const formDataToSend = new FormData();
+    formDataToSend.append("name", formData.name);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("phone", formData.phone);
+    formDataToSend.append("message", formData.message);
+
+    const response = await fetch("https://leukapparels.com/contact.php", {
+      method: "POST",
+      body: formDataToSend, // No headers! Bluehost blocks JSON headers
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      alert("Message sent successfully!");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } else {
+      alert("Failed to send message: " + (result.error || "Please try again."));
     }
-  };
+  } catch (error) {
+    alert("Network error. Please try again later.");
+  }
+};
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
@@ -81,6 +87,18 @@ const ContactUs = () => {
                       TC-6/1389, PTP Nagar<br />
                       Trivandrum, Kerala,<br />
                       India - 698052
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <Building className="w-6 h-6 text-gray-600 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-gray-800 mb-2">SALES OFFICE</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Master's Villa ,<br />
+                      Gandhinagar, Mudiyoorkara, <br />
+                      Kottayam-686008
                     </p>
                   </div>
                 </div>

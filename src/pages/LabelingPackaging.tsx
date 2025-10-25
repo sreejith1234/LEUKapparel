@@ -1,8 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import heroImage from "@/assets/labeling_repacking.webp";
-import labelingImg from "@/assets/innovative-thoughts.jpg";
-import packagingImg from "@/assets/small-business.jpg";
+import labelingImg from "@/assets/Service_labelling1.webp";
+import packagingImg from "@/assets/Service_labelling2.webp";
 
 const LabelingPackaging = () => {
   return (

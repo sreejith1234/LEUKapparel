@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
-import privateLabelImg from "@/assets/Hospitality.png";
+import privateLabelImg from "@/assets/Hospitality.webp";
 import uniformImg from "@/assets/SE_New.webp";
-import sportswearImg from "@/assets/Sports.png";
-import officeImg from "@/assets/Corporate_Office Uniforms.png";
-import workImg from "@/assets/IndustrialWorkwear.png";
-import aviationImg from "@/assets/Aviation_ Travel.png";
-import customImg from "@/assets/CustomPromotionalUniforms.png";
-import medicalImg from "@/assets/Healthcare.png";
+import sportswearImg from "@/assets/Sports.webp";
+import officeImg from "@/assets/Corporate_Office Uniforms.webp";
+import workImg from "@/assets/IndustrialWorkwear.webp";
+import aviationImg from "@/assets/Aviation_ Travel.webp";
+import customImg from "@/assets/CustomPromotionalUniforms.webp";
+import medicalImg from "@/assets/Healthcare.webp";
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 
@@ -92,11 +92,11 @@ const Services = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <div key={index} className="flex flex-col">
-              <div className="relative h-80 overflow-hidden shadow-lg">
+              <div className="relative overflow-hidden shadow-lg">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div className="p-6 text-center flex flex-col flex-grow">
@@ -119,36 +119,60 @@ const Services = () => {
       {/* Popup Modal */}
       {selectedService && (
         <div 
-          className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-black/60 flex items-center justify-center z-[9999] p-4"
           onClick={() => setSelectedService(null)}
         >
           <div 
-            className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] relative"
+            className="bg-white rounded-lg max-w-7xl w-full max-h-[95vh] relative flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              onClick={() => setSelectedService(null)}
-              className="absolute top-4 right-4 z-20 bg-white/80 hover:bg-white rounded-full p-2 transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-            <div className="flex flex-col md:flex-row max-h-[90vh] overflow-hidden">
-              <div className="md:w-1/2 flex-shrink-0">
+            {/* Fixed Header */}
+            <div className="flex justify-between items-center p-4 md:px-12 border-b flex-shrink-0">
+              <h3 className="text-lg md:text-2xl font-bold text-foreground">
+                {selectedService.title}
+              </h3>
+              <button
+                onClick={() => setSelectedService(null)}
+                className="bg-white/80 hover:bg-white rounded-full p-2 transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            
+            {/* Content */}
+            <div className="flex-1 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden">
+              <div className="md:w-1/2 md:flex-shrink-0 bg-white flex items-center justify-center px-12 pt-12 pb-0 md:p-12 md:rounded-l-lg">
                 <img
                   src={selectedService.image}
                   alt={selectedService.title}
-                  className="w-full h-64 md:h-full object-cover rounded-l-lg"
+                  className="w-full h-full object-contain"
                 />
               </div>
-              <div className="md:w-1/2 flex flex-col min-h-0">
-                <div className="p-6 pb-4 flex-shrink-0">
-                  <h3 className="text-2xl font-bold text-foreground">
-                    {selectedService.title}
-                  </h3>
-                </div>
-                <div className="px-6 pb-6 overflow-y-auto flex-1 min-h-0">
-                  <div className="text-muted-foreground leading-relaxed whitespace-pre-line">
-                    {selectedService.fullContent || selectedService.description}
+              <div className="md:w-1/2 flex flex-col md:overflow-y-auto">
+                <div className="p-6 md:pr-16">
+                  <div className="text-muted-foreground leading-relaxed md:text-justify">
+                    {selectedService.fullContent ? (
+                      selectedService.fullContent.split('\n\n').map((paragraph, index) => {
+                        if (paragraph.includes('•')) {
+                          const lines = paragraph.split('\n');
+                          const title = lines[0];
+                          const bullets = lines.slice(1).filter(line => line.startsWith('•'));
+                          return (
+                            <div key={index} className="mb-4">
+                              <p className="mb-2">{title}</p>
+                              <ul className="list-disc list-inside ml-4 space-y-1">
+                                {bullets.map((bullet, bulletIndex) => (
+                                  <li key={bulletIndex}>{bullet.replace('• ', '')}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          );
+                        }
+                        return <p key={index} className="mb-4">{paragraph}</p>;
+                      })
+                    ) : (
+                      <p>{selectedService.description}</p>
+                    )}
                   </div>
                 </div>
               </div>

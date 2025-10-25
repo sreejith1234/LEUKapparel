@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import heroImage from "@/assets/embroidery.webp";
-import garmentsImg from "@/assets/reduced-prices.jpg";
+import garmentsImg from "@/assets/service_embroidery_lastpage.webp";
 
 const Embroidery = () => {
   return (

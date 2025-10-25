@@ -1,8 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { CheckCircle, Scissors, Palette, Shirt, Building, Zap, Award, Circle, Minus } from "lucide-react";
-import heroImage from "@/assets/Portfolio.png";
+import { Scissors, Palette, Shirt, Building, Zap, Award, } from "lucide-react";
+import heroImage from "@/assets/Portfolio.webp";
+import PortfolioImg from "@/assets/portfolio_last_page.webp";
 import { useContactModal } from "@/contexts/ContactModalContext";
 
 const Portfolio = () => {
@@ -67,7 +67,7 @@ const Portfolio = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 order-2 lg:order-1">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 leading-tight">
                 Our Portfolio – Crafted With Precision, Worn With Pride
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">
@@ -81,7 +81,7 @@ const Portfolio = () => {
               <img 
                 src={heroImage} 
                 alt="Portfolio" 
-                className="w-full h-[300px] lg:h-[500px] object-cover rounded-2xl"
+                className="w-full h-[300px] lg:h-[500px] object-contain rounded-2xl"
               />
             </div>
           </div>
@@ -91,19 +91,27 @@ const Portfolio = () => {
       {/* Expertise Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-               Our Expertise at a Glance
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Our Expertise at a Glance
             </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {expertise.map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <item.icon className="w-8 h-8 text-primary mb-4" />
-                <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-                <p className="text-muted-foreground text-sm">{item.desc}</p>
-              </div>
-            ))}
+            <p className="text-muted-foreground leading-relaxed text-center mb-8">
+              As a trusted apparel manufacturer, we offer a full suite of services, including:
+            </p>
+            <h2 className="text-2xl md:text-3xl text-foreground mb-8">
+              We Offer
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              {expertise.map((item, index) => (
+                <div key={index} className="bg-white p-6 rounded-lg border shadow-sm">
+                  <h3 className="font-bold text-foreground mb-2">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-muted-foreground leading-relaxed text-lg font-light py-4">
+              "Our skilled team manages both <span className="font-bold">medium and large-scale production runs</span> with consistency and care, ensuring your garments meet the highest industry standards."
+            </p>
           </div>
         </div>
       </section>
@@ -111,73 +119,59 @@ const Portfolio = () => {
       {/* Work Categories Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               Our Work Categories
             </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {workCategories.map((category, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
-                <span className="text-4xl mb-4 block">{category.emoji}</span>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{category.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4 flex-grow">{category.desc}</p>
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {category.services.map((service, serviceIndex) => (
-                    <span key={serviceIndex} className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
-                      {service}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-              Why Brands Choose Leuk Apparel
+            <p className="text-muted-foreground leading-relaxed text-center mb-8">
+              We specialize in diverse apparel categories, delivering quality across all segments:
+            </p>
+            <h2 className="text-2xl md:text-3xl text-foreground mb-8">
+              We Specialize In
             </h2>
-            <div className="space-y-4 mb-12">
-              {whyChooseUs.map((point, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-lg text-muted-foreground">{point}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              {workCategories.map((category, index) => (
+                <div key={index} className="bg-white p-6 rounded-lg border shadow-sm flex flex-col h-full">
+                  <span className="text-4xl mb-4 block">{category.emoji}</span>
+                  <h3 className="font-bold text-foreground mb-2">{category.title}</h3>
+                  <p className="text-muted-foreground text-sm mb-4 flex-grow">{category.desc}</p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {category.services.map((service, serviceIndex) => (
+                      <span key={serviceIndex} className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
+                        {service}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
-            <div className="text-center">
-              <blockquote className="text-2xl font-semibold text-foreground italic mb-8">
-                "Quality isn't an act, it's our identity."
-              </blockquote>
-            </div>
+            <p className="text-muted-foreground leading-relaxed text-lg font-light py-4">
+              "From concept to completion, we deliver <span className="font-bold">exceptional quality</span> across all categories, ensuring your brand stands out in the market."
+            </p>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Let's Build Something Exceptional
-          </h2>
-          <p className="text-xl text-white/90 leading-relaxed mb-8 max-w-4xl mx-auto">
-            Whether you're launching a new fashion brand, producing custom uniforms, or scaling your existing clothing line, Leuk Apparel is your trusted partner for premium apparel manufacturing.
-          </p>
-          <p className="text-lg text-white/80 leading-relaxed mb-12 max-w-3xl mx-auto">
-            We combine creativity, technology, and craftsmanship to deliver garments that make an impact — from the factory floor to the global marketplace.
-          </p>
-          <Button 
-            variant="outline"
-            className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition-all duration-300 px-8 py-6 rounded-none text-lg"
-            onClick={openModal}
-          >
-            → Get in touch with Leuk Apparel today to start your next project
-          </Button>
+      {/* Portfolio Showcase Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 lg:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+                Why Choose Leuk Apparel
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+                Explore our diverse portfolio showcasing expertly crafted apparel across categories—from custom hoodies and premium sweaters to adorable babywear and stylish track pants. At Leuk Apparels, every piece reflects our commitment to quality, innovation, and craftsmanship tailored to elevate your brand.
+              </p>
+            </div>
+            <div className="overflow-hidden">
+              <img 
+                src={PortfolioImg} 
+                alt="Leuk Apparels Portfolio" 
+                className="w-full h-[400px] lg:h-[500px] object-contain rounded-2xl"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

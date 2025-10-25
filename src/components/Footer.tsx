@@ -6,6 +6,7 @@ const Footer = () => {
   const pages = [
     { name: "Home", href: "/" },
     { name: "Who we Are", href: "/who-we-are" },
+    { name: "Uniform", href: "/uniform" },
     { name: "Portfolio", href: "/portfolio" },
     { name: "Contact Us", href: "/contact-us" }
   ];
@@ -13,6 +14,7 @@ const Footer = () => {
   const productCategories = [
     "T-Shirts", 
     "Track Pants",
+    "Baby Clothing",
     "Hoodies",
     "Sweater"
   ];
@@ -42,12 +44,13 @@ const Footer = () => {
             <h3 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Contact Us</h3>
             <div className="space-y-4 text-sm text-slate-400 mb-4">
               <div>
-                <p className="font-semibold mb-1">SALES OFFICE</p>
-                <p>TC-6/1389, PTP Nagar, Trivandrum, Kerala, India - 698052</p>
+                <p className="font-semibold mb-1">SALES OFFICES</p>
+                <p className="mb-2">📍TC-6/1389, PTP Nagar, Trivandrum, Kerala, India - 698052.</p>
+                <p>📍Master's Villa, Gandhinagar, Mudiyoorkara, Kottayam-686008.</p>
               </div>
               <div>
                 <p className="font-semibold mb-1">FACTORY ADDRESS</p>
-                <p>60 Pannai Nagar, Perundurai Road, Erode, Tamil Nadu, India - 638052</p>
+                <p>📍60 Pannai Nagar, Perundurai Road, Erode, Tamil Nadu, India - 638052</p>
               </div>
             </div>
             <div className="text-sm text-slate-400">

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import designUniqueBg from "@/assets/design-unique.jpg";
+import designUniqueBg from "@/assets/main_page_footer.webp";
 import { useContactModal } from "@/contexts/ContactModalContext";
 
 const DesignSection = () => {

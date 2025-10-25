@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import heroImage from "@/assets/sblimation_printing.webp";
-import garmentsImg from "@/assets/small-business.jpg";
+import heroImage from "@/assets/Service_sublimation.webp";
+import garmentsImg from "@/assets/service_sublimation2.webp";
 
 const SublimationPrinting = () => {
   return (

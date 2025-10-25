@@ -8,6 +8,7 @@ import WhoWeAre from "./pages/WhoWeAre";
 import ContactUs from "./pages/ContactUs";
 import TShirts from "./pages/TShirts";
 import TrackPants from "./pages/TrackPants";
+import BabyClothing from "./pages/BabyClothing";
 import Hoodies from "./pages/Hoodies";
 import Sweater from "./pages/Sweater";
 import CutAndSew from "./pages/CutAndSew";
@@ -16,6 +17,7 @@ import SublimationPrinting from "./pages/SublimationPrinting";
 import Embroidery from "./pages/Embroidery";
 import LabelingPackaging from "./pages/LabelingPackaging";
 import Portfolio from "./pages/Portfolio";
+import Uniform from "./pages/Uniform";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopButton from "./components/ScrollToTopButton";
@@ -35,10 +37,12 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/who-we-are" element={<WhoWeAre />} />
+            <Route path="/uniform" element={<Uniform />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/products/t-shirts" element={<TShirts />} />
             <Route path="/products/track-pants" element={<TrackPants />} />
+            <Route path="/products/baby-clothing" element={<BabyClothing />} />
             <Route path="/products/hoodies" element={<Hoodies />} />
             <Route path="/products/sweater" element={<Sweater />} />
             <Route path="/services/cut-and-sew-clothing" element={<CutAndSew />} />

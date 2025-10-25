@@ -1,14 +1,11 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import heroImage from "@/assets/sweater.jpg";
-import sweaterImg from "@/assets/sweatshirt.jpg";
-import sweatersmokeImg from "@/assets/sweatersmoke.jpg";
-import sweaterfogImg from "@/assets/sweaterfog.jpg";
-import sweater1Img from "@/assets/Sweater1.png";
-import sweater2Img from "@/assets/Sweater2.png";
-import sweater3Img from "@/assets/sweater3.png";
+import heroImage from "@/assets/ds1.webp";
+import sweatersmokeImg from "@/assets/DS2.webp";
+import sweaterfogImg from "@/assets/ds3.webp";
+import sweater1Img from "@/assets/Sweater1.webp";
+import sweater2Img from "@/assets/Sweater2.webp";
+import sweater3Img from "@/assets/Sweater3.webp";
 import { useContactModal } from "@/contexts/ContactModalContext";
 
 const Sweater = () => {
@@ -111,10 +108,16 @@ const Sweater = () => {
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-2xl">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Premium Custom Sweater Manufacturing – Elevating Your Fashion Brand
+              Wrap Up in Style with Dumj Sweaters
             </h2>
             <p className="text-white/90 text-lg leading-relaxed mb-8 text-left lg:text-justify">
-              At Leuk Apparels, we understand that every fashion brand has a unique aesthetic to express. Our expert team specializes in creating custom sweaters that perfectly capture your brand's elegance through superior craftsmanship, innovative knitting techniques, and premium yarn materials. From concept to completion, we ensure every piece reflects your vision with uncompromising quality and sophistication.
+              Discover the perfect blend of warmth, comfort, and craftsmanship with our premium Dumj sweaters. Designed for modern lifestyles and made with high-quality materials, our sweaters are ideal for fashion-forward brands looking to offer cozy yet stylish winter wear.
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Partner with Leuk Apparels today
+            </h2>
+            <p className="text-white/90 text-lg leading-relaxed mb-8 text-left lg:text-justify">
+              to create your custom Dumj sweater collection that stands out in every season.
             </p>
           </div>
         </div>
@@ -129,10 +132,16 @@ const Sweater = () => {
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-2xl ml-auto text-left lg:text-right">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Craftsmanship Excellence – Premium Sweater Manufacturing
+              Craftsmanship Excellence in Premium Sweater Manufacturing
             </h2>
             <p className="text-white/90 text-lg leading-relaxed mb-8 text-left lg:text-justify">
-              Committed to traditional craftsmanship, Leuk Apparels leads the way in premium sweater manufacturing. We utilize fine yarns, expert knitting techniques, and quality-enhancing processes to create exceptional knitwear that provides warmth and elegance. Our innovative manufacturing processes ensure that every sweater we produce meets the highest standards of comfort and style.
+              At <span className="font-bold">Leuk Apparels</span>, we are passionate about preserving the art of traditional craftsmanship while embracing modern innovation. As a leading name in <span className="font-bold">premium sweater manufacturing</span>, we specialize in producing high-quality knitwear that combines <span className="font-bold">timeless elegance with superior comfort</span>.
+            </p>
+            <p className="text-white/90 text-lg leading-relaxed mb-8 text-left lg:text-justify">
+              Using only the <span className="font-bold">finest yarns</span> and <span className="font-bold">expert knitting techniques</span>, our team ensures each sweater is meticulously crafted to meet the highest standards. From luxurious textures to flawless finishes, every piece reflects our commitment to <span className="font-bold">quality, durability, and style</span>.
+            </p>
+            <p className="text-white/90 text-lg leading-relaxed mb-8 text-left lg:text-justify">
+              Whether you're building a fashion-forward collection or a classic winter line, trust Leuk Apparels to deliver exceptional sweaters that elevate your brand.
             </p>
           </div>
         </div>

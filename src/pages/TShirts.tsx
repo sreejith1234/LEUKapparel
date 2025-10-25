@@ -1,13 +1,11 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import heroImage from "@/assets/T-shirts_banner.png";
-import tshirtImg from "@/assets/V-neck_ts.png";
-import vneckImg from "@/assets/vneck_ts.png";
-import poloImg from "@/assets/Polo_ts.png";
-import tshirtd from "@/assets/tshirtd.jpg";
-import tshirtw from "@/assets/tshirtw.jpg";
+import heroImage from "@/assets/T-shirts_banner.webp";
+import tshirtImg from "@/assets/V-neck_ts.webp";
+import vneckImg from "@/assets/vneck_ts.webp";
+import poloImg from "@/assets/Polo_ts.webp";
+import tshirtd from "@/assets/product_Tshirts_second_page.webp";
+import tshirtw from "@/assets/product_tshirts_last_page.webp";
 import { useContactModal } from "@/contexts/ContactModalContext";
 
 const TShirts = () => {

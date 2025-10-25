@@ -1,13 +1,11 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import heroImage from "@/assets/trackhero.jpg";
-import track1Img from "@/assets/track1.jpg";
-import track2Img from "@/assets/track2.jpg";
-import trackPants1Img from "@/assets/track_pants1.png";
+import heroImage from "@/assets/tp1.webp";
+import track1Img from "@/assets/tp2.webp";
+import track2Img from "@/assets/tp3.webp";
+import trackPants1Img from "@/assets/track_pants1.webp";
 import trackPants2Img from "@/assets/track_pants2.webp";
-import trackPants3Img from "@/assets/track_pants3.png";
+import trackPants3Img from "@/assets/track_pants3.webp";
 import trackPants4Img from "@/assets/track_pants4.webp";
 
 
@@ -106,22 +104,11 @@ const TrackPants = () => {
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-2xl">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-              Professional & Reliable Tone
+              Your Trusted Partner in Custom Clothing Manufacturing
             </h2>
             <p className="text-white/90 text-lg leading-relaxed mb-2 text-left lg:text-justify">
-              Customized Tracksuits Perfect for Teams, Workforces, and Events.
-            </p>
-            <p className="text-white/90 text-lg leading-relaxed mb-2 text-left lg:text-justify">
-              Premium Comfort. Consistent Quality. Perfect for Every Team
-            </p>
-            <p className="text-white/90 text-lg leading-relaxed mb-2 text-left lg:text-justify">
-              Designed for Uniformity. Built for Everyday Performance
-            </p>
-            <p className="text-white/90 text-lg leading-relaxed mb-2 text-left lg:text-justify">
-              Smart. Durable. Custom-Made for Your Brand
-            </p>
-            <p className="text-white/90 text-lg leading-relaxed mb-2 text-left lg:text-justify">
-              Your Ideal Partner for Bulk and Corporate Tracksuit Manufacturing
+              Leuk Apparel offers a proven, streamlined process for businesses of all sizes. From concept to creation, we provide end-to-end manufacturing solutions tailored to your brand.
+With extensive industry experience and a strong network of fashion professionals, we’re more than manufacturers — we’re your creative partners.
             </p>
           </div>
         </div>

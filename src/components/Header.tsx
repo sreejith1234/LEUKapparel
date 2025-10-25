@@ -1,13 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Search, ArrowRight } from "lucide-react";
+import { Menu, X, Search, ArrowRight, ChevronRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/logo.png";
+import whatsappIcon from "@/assets/WhatsApp.svg";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const dropdownRef = useRef(null);
   const servicesDropdownRef = useRef(null);
   const hoverTimeoutRef = useRef(null);
@@ -31,6 +34,7 @@ const Header = () => {
     { name: "Who we Are", href: "/who-we-are" },
     { name: "Our Products", href: "#", hasDropdown: true, type: "products" },
     { name: "Services", href: "#", hasDropdown: true, type: "services" },
+    { name: "Uniform", href: "/uniform" },
     { name: "Portfolio", href: "/portfolio" },
     { name: "Contact Us", href: "/contact-us" },
   ];
@@ -38,6 +42,7 @@ const Header = () => {
   const productCategories = [
     "T-Shirts", 
     "Track Pants",
+    "Baby Clothing",
     "Hoodies",
     "Sweater"
   ];
@@ -147,11 +152,19 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Right side - Search */}
+          {/* Right side - WhatsApp */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="ghost" size="icon" className="hover:bg-primary-foreground/10 hidden rounded-none">
-              <Search className="w-5 h-5" />
-            </Button>
+            <div className="flex flex-col items-center">
+              <a 
+                href="https://wa.me/918558030303" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white w-10 h-10 rounded-full transition-colors duration-300"
+              >
+                <img src={whatsappIcon} alt="WhatsApp" className="w-5 h-5" />
+              </a>
+              <span className="text-white text-xs mt-1">+91 8558030303</span>
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -173,35 +186,53 @@ const Header = () => {
             {navItems.map((item) => (
               item.hasDropdown ? (
                 <div key={item.name}>
-                  <div className={`text-sm font-normal py-2 ${
-                    (item.type === 'products' && location.pathname.startsWith('/products/')) || (item.type === 'services' && location.pathname.startsWith('/services/'))
-                      ? 'text-accent'
-                      : 'text-white'
-                  }`}>
+                  <button 
+                    className={`flex items-center justify-between w-full text-sm font-normal py-2 ${
+                      (item.type === 'products' && location.pathname.startsWith('/products/')) || (item.type === 'services' && location.pathname.startsWith('/services/'))
+                        ? 'text-accent'
+                        : 'text-white'
+                    }`}
+                    onClick={() => {
+                      if (item.type === 'products') {
+                        setMobileProductsOpen(!mobileProductsOpen);
+                        setMobileServicesOpen(false);
+                      } else {
+                        setMobileServicesOpen(!mobileServicesOpen);
+                        setMobileProductsOpen(false);
+                      }
+                    }}
+                  >
                     {item.name}
-                  </div>
-                  <div className="ml-4 space-y-2">
-                    {(item.type === 'products' ? productCategories : serviceCategories).map((category) => {
-                      const categoryPath = item.type === 'products' 
-                        ? `/products/${category.toLowerCase().replace(/\s+/g, '-')}`
-                        : `/services/${category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`;
-                      const isActive = location.pathname === categoryPath;
-                      return (
-                        <Link
-                          key={category}
-                          to={categoryPath}
-                          className={`block text-sm py-1 transition-colors ${
-                            isActive
-                              ? 'text-accent'
-                              : 'text-white/80 hover:text-accent'
-                          }`}
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {category}
-                        </Link>
-                      );
-                    })}
-                  </div>
+                    {item.type === 'products' ? (
+                      mobileProductsOpen ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />
+                    ) : (
+                      mobileServicesOpen ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />
+                    )}
+                  </button>
+                  {((item.type === 'products' && mobileProductsOpen) || (item.type === 'services' && mobileServicesOpen)) && (
+                    <div className="ml-4 space-y-2 mt-2">
+                      {(item.type === 'products' ? productCategories : serviceCategories).map((category) => {
+                        const categoryPath = item.type === 'products' 
+                          ? `/products/${category.toLowerCase().replace(/\s+/g, '-')}`
+                          : `/services/${category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`;
+                        const isActive = location.pathname === categoryPath;
+                        return (
+                          <Link
+                            key={category}
+                            to={categoryPath}
+                            className={`block text-sm py-1 transition-colors ${
+                              isActive
+                                ? 'text-accent'
+                                : 'text-white/80 hover:text-accent'
+                            }`}
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {category}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
               ) : item.href.startsWith('/') ? (
                 <Link
@@ -227,6 +258,21 @@ const Header = () => {
                 </a>
               )
             ))}
+            
+            {/* Mobile WhatsApp */}
+            <div className="flex items-center justify-center pt-4 border-t border-primary-foreground/10">
+              <div className="flex flex-col items-center">
+                <a 
+                  href="https://wa.me/918558030303" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white w-10 h-10 rounded-full transition-colors duration-300"
+                >
+                  <img src={whatsappIcon} alt="WhatsApp" className="w-5 h-5" />
+                </a>
+                <span className="text-white text-xs mt-1">+91 8558030303</span>
+              </div>
+            </div>
           </nav>
         </div>
       )}

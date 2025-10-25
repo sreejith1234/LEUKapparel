@@ -2,10 +2,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/Cut_sew.webp";
-import manufacturingImg from "@/assets/cut1.jpg";
-import qualityImg from "@/assets/cut2.jpg";
+import manufacturingImg from "@/assets/Service_Cut_Sue1.webp";
+import qualityImg from "@/assets/Service_Cut_Sue2.webp";
+import { useContactModal } from "@/contexts/ContactModalContext";
 
 const CutAndSew = () => {
+  const { openModal } = useContactModal();
   return (
     <div className="min-h-screen">
       <Header />
@@ -200,6 +202,7 @@ const CutAndSew = () => {
               Let's build something exceptional — together.
             </p>
             <Button 
+              onClick={openModal}
               className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg rounded-none"
             >
               Partner with Leuk Apparel Today

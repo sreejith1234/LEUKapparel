@@ -1,13 +1,14 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import manufacturingImage from "@/assets/cut-sew.jpg";
-import Main_Page from "@/assets/Main_Page.png";
-import Aboutus from "@/assets/All_About2.png";
-import Aboutus1 from "@/assets/All_About1.png";
-import heroImage from "@/assets/hero-clothing.jpg";
+import { useContactModal } from "@/contexts/ContactModalContext";
+import manufacturingImage from "@/assets/cut-sew.webp";
+import Main_Page from "@/assets/Main_Page.webp";
+import Aboutus from "@/assets/All_About2.webp";
 
 const WhoWeAre = () => {
+  const { openModal } = useContactModal();
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -42,7 +43,10 @@ const WhoWeAre = () => {
               <p className="text-muted-foreground leading-relaxed text-lg mb-8">
                 With meticulous attention to detail and unwavering commitment to quality, we transform ideas into exceptional garments that exceed expectations.
               </p>
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-none">
+              <Button 
+                onClick={openModal}
+                className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-none"
+              >
                 Contact Us
               </Button>
             </div>
